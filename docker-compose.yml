@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Banco de Dados de Desenvolvimento
+  db_dev:
+    image: postgres:15-alpine
+    container_name: ecom_postgres_dev
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: ecommerce_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ecommerce_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Banco de Dados de Testes (Exclusivo e Descartável)
+  db_test:
+    image: postgres:15-alpine
+    container_name: ecom_postgres_test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: ecommerce_test
+    ports:
+      - "5433:5432"  # Mapeia a porta interna 5432 para a 5433 do seu computador
+    # Sem volumes aqui, atendendo ao requisito de dados descartáveis!
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ecommerce_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_dev_data:  # Volume apenas para o banco de dev
