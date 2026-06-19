@@ -6,7 +6,7 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 
-[cite_start]API REST completa e robusta para gerenciamento de catálogos de produtos de um pequeno e-commerce[cite: 23]. [cite_start]O projeto foi desenvolvido aplicando **Arquitetura Modular em Camadas**, validações estritas de dados com **Pydantic v2**, persistência relacional via **SQLAlchemy ORM** e uma suíte completa de testes automatizados executados contra um banco de dados real em container[cite: 9, 34].
+API REST completa e robusta para gerenciamento de catálogos de produtos de um pequeno e-commerce[cite: 23]. O projeto foi desenvolvido aplicando **Arquitetura Modular em Camadas**, validações estritas de dados com **Pydantic v2**, persistência relacional via **SQLAlchemy ORM** e uma suíte completa de testes automatizados executados contra um banco de dados real em container.
 
 ---
 
@@ -17,19 +17,19 @@ O projeto foi reestruturado seguindo as melhores práticas de mercado (*Clean Co
 ```text
 seu_repositorio/
 ├── app/
-│   ├── database.py    # Configuração de conexão e injeção do SQLAlchemy [cite: 35]
-│   ├── models.py      # Modelagem das tabelas relacionais do banco [cite: 16]
-│   ├── schemas.py     # Camada de validação de schemas de entrada/saída (Pydantic) [cite: 34]
-│   └── routers.py     # Endpoints e regras de negócio da API [cite: 31]
+│   ├── database.py    # Configuração de conexão e injeção do SQLAlchemy 
+│   ├── models.py      # Modelagem das tabelas relacionais do banco 
+│   ├── schemas.py     # Camada de validação de schemas de entrada/saída (Pydantic) 
+│   └── routers.py     # Endpoints e regras de negócio da API 
 ├── tests/
 │   ├── __init__.py
-│   └── test_produtos.py # Suíte de testes automatizados com Pytest [cite: 46]
-├── main.py            # Ponto de entrada e inicialização da aplicação [cite: 31, 65]
-├── conftest.py        # Configuração de fixtures e isolamento de estado [cite: 59, 66]
-├── docker-compose.yml # Orquestração dos containers de banco de dados [cite: 18, 38]
-├── Dockerfile         # Instruções de empacotamento da aplicação [cite: 68]
-├── pytest.ini         # Configurações globais do Pytest [cite: 69]
-└── requirements.txt   # Dependências do projeto [cite: 67]
+│   └── test_produtos.py # Suíte de testes automatizados com Pytest 
+├── main.py            # Ponto de entrada e inicialização da aplicação 
+├── conftest.py        # Configuração de fixtures e isolamento de estado 
+├── docker-compose.yml # Orquestração dos containers de banco de dados 
+├── Dockerfile         # Instruções de empacotamento da aplicação 
+├── pytest.ini         # Configurações globais do Pytest 
+└── requirements.txt   # Dependências do projeto 
 ``` 
 
 ## 🚀 Como Executar a Infraestrutura (Docker)
