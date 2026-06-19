@@ -35,7 +35,10 @@ seu_repositorio/
 ## 🚀 Como Executar a Infraestrutura (Docker)
 O ambiente utiliza dois serviços PostgreSQL isolados para blindar o banco de desenvolvimento contra efeitos colaterais dos testes automatizados.  Subir os containers de banco de dados:Bashdocker-compose up -d
 Confirmar se os serviços estão ativos e saudáveis (healthy):Bashdocker ps
-Banco de Desenvolvimento (db_dev): Porta local 5432. Possui volume persistente para manter seus dados salvos.  Banco de Testes (db_test): Porta local 5433. Dados 100% voláteis e descartáveis.  🧪 Execução dos Testes e CoberturaA suíte conta com 15 cenários de testes executados de forma totalmente automatizada através do Pytest.  Para rodar os testes e exibir o relatório detalhado de cobertura de código, execute:  Bashpytest --cov=app -v
+Banco de Desenvolvimento (db_dev): Porta local 5432. Possui volume persistente para manter seus dados salvos.  Banco de Testes (db_test): Porta local 5433. Dados 100% voláteis e descartáveis.
+
+##  🧪 Execução dos Testes e Cobertura
+A suíte conta com 15 cenários de testes executados de forma totalmente automatizada através do Pytest.  Para rodar os testes e exibir o relatório detalhado de cobertura de código, execute:  Bashpytest --cov=app -v
 
 ## 📈 Saída Esperada no Terminal
 
